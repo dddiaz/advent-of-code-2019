@@ -2,7 +2,7 @@ package main
 
 import "testing"
 
-func TestModuleFule(t *testing.T) {
+func TestModuleFuel(t *testing.T) {
 	tables := []struct {
 		weight        int
 		expected_fuel int
@@ -18,5 +18,11 @@ func TestModuleFule(t *testing.T) {
 		if result != table.expected_fuel {
 			t.Errorf("ModuleFuel of (%d) was incorrect, got: %d, want: %d.", table.weight, result, table.expected_fuel)
 		}
+	}
+}
+
+func BenchmarkModuleFuel(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		ModuleFuel(501)
 	}
 }
