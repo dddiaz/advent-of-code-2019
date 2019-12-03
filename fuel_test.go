@@ -4,8 +4,8 @@ import "testing"
 
 func TestModuleFuel(t *testing.T) {
 	tables := []struct {
-		weight        int
-		expected_fuel int
+		weight        int64
+		expected_fuel int64
 	}{
 		{12, 2},
 		{14, 2},
